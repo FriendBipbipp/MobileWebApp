@@ -1,0 +1,6 @@
+{
+  "name": "lab05-photo-react",
+  "integrations": {},
+  "type": "react-vite",
+  "npmClient": "npm"
+}
