@@ -1,0 +1,21 @@
+ext {
+    minSdkVersion = 24
+    compileSdkVersion = 35
+    targetSdkVersion = 35
+
+    // ลดเวอร์ชันลงมาเป็นรุ่น Stable (ไม่เรียกร้อง SDK 36)
+    androidxActivityVersion = '1.9.0'
+    androidxAppCompatVersion = '1.6.1'
+    androidxCoordinatorLayoutVersion = '1.2.0'
+    androidxCoreVersion = '1.13.1'          // ตัวสำคัญ! แก้ให้รองรับ SDK 35
+    androidxFragmentVersion = '1.6.2'
+
+    // ลดเวอร์ชันเพื่อให้ใช้กับ Gradle 8.2.1 ได้
+    coreSplashScreenVersion = '1.0.1'
+
+    androidxWebkitVersion = '1.9.0'
+    junitVersion = '4.13.2'
+    androidxJunitVersion = '1.1.5'
+    androidxEspressoCoreVersion = '3.5.1'
+    cordovaAndroidVersion = '10.1.1'
+}

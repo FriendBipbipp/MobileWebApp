@@ -1,0 +1,18 @@
+ext {
+    minSdkVersion = 23
+    compileSdkVersion = 35        // แก้จาก 36 (36 ใหม่เกินไป) เป็น 34 (Android 14)
+    targetSdkVersion = 35        // แก้จาก 36 เป็น 34
+
+    androidxActivityVersion = '1.8.2'       // รุ่นเสถียร
+    androidxAppCompatVersion = '1.6.1'      // แก้จาก 1.13.1 (เลขผิด) เป็น 1.6.1
+    androidxCoordinatorLayoutVersion = '1.2.0' // แก้จาก 1.0.1 เป็น 1.2.0
+    androidxCoreVersion = '1.13.1'          // แก้จาก 1.17.0 (ที่เป็นตัวการ Error)
+    androidxFragmentVersion = '1.6.2'
+    coreSplashScreenVersion = '1.0.1'       // แก้จาก 1.2.0 (ที่เป็นตัวการ Error)
+    androidxWebkitVersion = '1.9.0'         // รุ่นเสถียร
+
+    junitVersion = '4.13.2'
+    androidxJunitVersion = '1.1.5'
+    androidxEspressoCoreVersion = '3.5.1'
+    cordovaAndroidVersion = '10.1.1'
+}
