@@ -3,825 +3,304 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KKU Campus Guide - แนะนำสถานที่มหาวิทยาลัยขอนแก่น</title>
+    <title>KKU Campus Guide</title>
 
-    <style>
-        /* Logo container */
-.page-logo {
-    margin: 14px auto 10px;
-    width: 90px;
-    height: 90px;
-    position: relative;
-    border-radius: 14px;
-    overflow: hidden;
-    background: radial-gradient(circle at 30% 20%, #fff8d1 0%, #b37a00 50%, #4d1111 100%);
-    border: 1px solid rgba(244, 217, 138, 0.8);
-    box-shadow:
-        0 10px 26px rgba(0, 0, 0, 0.45),
-        0 0 0 1px rgba(255,255,255,0.3);
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+   <style>
+    body {
+    background-color: #F7EDE8;
+    font-family: "Prompt", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h3, h4 {
+    color: #B5523A;
+}
+
+/* ===================== HEADER ===================== */
+header {
+    background: #B5523A;
+    color: white;
+    padding: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 20px;          /* ระยะห่างระหว่างโลโก้และข้อความ */
+    flex-wrap: wrap;     /* ให้พับบรรทัดเมื่อเล็ก */
+    text-align: left;    /* ข้อความชิดซ้ายเมื่ออยู่ข้างโลโก้ */
 }
 
-/* Logo image */
-.page-logo img {
-    width: 78%;
-    height: 78%;
-    object-fit: contain;
-    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.4));
+header canvas {
+    border-radius: 50%;
 }
 
-/* Shiny animation overlay */
-.page-logo .shine {
-    position: absolute;
-    top: -40%;
-    left: -60%;
-    width: 50%;
-    height: 180%;
-    background: linear-gradient(
-        120deg,
-        rgba(255,255,255,0) 0%,
-        rgba(255,255,255,0.45) 45%,
-        rgba(255,255,255,0) 100%
-    );
-    transform: rotate(25deg);
-    animation: shineMove 2.6s ease-in-out infinite;
-    pointer-events: none;
+header .title-text h2 {
+    margin: 0;
+    font-weight: bold;
 }
 
-/* keyframes for shiny sweep */
-@keyframes shineMove {
-    0% {
-        transform: translateX(-150%) rotate(25deg);
-        opacity: 0;
+header .title-text p {
+    margin: 2px 0;
+}
+
+/* ===================== MAIN CONTENT ===================== */
+section.place {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px solid #E4C3B8; /* ขอบโทนอิฐอ่อน */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.place img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    object-fit: cover;
+    height: auto;
+}
+
+/* ===================== FOOTER ===================== */
+footer {
+    background: #8A3E2C;
+    color: white;
+    padding: 15px 0;
+    margin-top: 40px;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;  /* บนมือถือให้โลโก้อยู่บน */
+        gap: 10px;
+        text-align: center;
     }
-    20% {
-        opacity: 1;
+
+    header h2 {
+        font-size: 20px;
     }
-    50% {
-        transform: translateX(220%) rotate(25deg);
-        opacity: 0.9;
-    }
-    80% {
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(300%) rotate(25deg);
-        opacity: 0;
+
+    .place img {
+        height: 150px; /* ปรับความสูงรูป */
     }
 }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --deep-green: #005841;
-            --deep-red: #850000;
-            --gold: #AF9500;
-            --soft-gold: #FFF7D1;
-            --card-border: #e5c76b;
-            --card-bg: #fcfaf3;
-            --text-main: #1f2933;
-            --text-muted: #6b7280;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, sans-serif;
-            background: radial-gradient(circle at top, #f8f4df 0%, #d6e8df 40%, #0b3c2b 100%);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
-
-        /* ---------- HEADER ---------- */
-        header {
-            background: linear-gradient(90deg, var(--deep-red), #5b0000);
-            color: #FFD;
-            text-align: center;
-            padding: 32px 20px 28px;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.35);
-            border-bottom: 1px solid rgba(0,0,0,0.35);
-        }
-
-        header h1 {
-            font-size: 2.1rem;
-            margin-bottom: 4px;
-            letter-spacing: 0.04em;
-        }
-
-        header p.subhead {
-            font-size: 0.98rem;
-            color: rgba(255, 248, 220, 0.9);
-            margin-bottom: 16px;
-        }
-
-        .student-info {
-            background-color: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 215, 0, 0.55);
-            border-radius: 999px;
-            padding: 8px 20px;
-            display: inline-flex;
-            align-items: center;
-            gap: 16px;
-            color: var(--soft-gold);
-            font-size: 0.9rem;
-        }
-
-        .student-info span {
-            white-space: nowrap;
-        }
-
-        .student-info strong {
-            color: #fffbe8;
-            font-weight: 600;
-        }
-
-        /* ---------- PAGE SHELL & MAIN CONTENT ---------- */
-        .page-shell {
-            max-width: 1200px;
-            margin: 32px auto 52px;
-            padding: 0 20px;
-        }
-
-        main {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 18px;
-            padding: 26px 22px 40px;
-            box-shadow:
-                0 18px 40px rgba(0,0,0,0.25),
-                0 0 0 1px rgba(255,255,255,0.5);
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(229, 199, 107, 0.35);
-        }
-
-        .main-title-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            gap: 12px;
-            margin-bottom: 18px;
-        }
-
-        .main-title-row-left {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .main-title {
-            font-size: 1.35rem;
-            font-weight: 600;
-            color: var(--deep-green);
-        }
-
-        .main-subtitle {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        .main-badge {
-            font-size: 0.8rem;
-            padding: 6px 12px;
-            border-radius: 999px;
-            border: 1px solid rgba(148, 163, 184, 0.7);
-            color: #4b5563;
-            background: linear-gradient(90deg, #fdfaf1, #f3f4f6);
-        }
-
-        /* ---------- LOCATION CARDS ---------- */
-        .location-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-            gap: 24px;
-            margin-top: 8px;
-        }
-
-        article {
-            background: var(--card-bg);
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid rgba(229, 199, 107, 0.6);
-            box-shadow:
-                0 10px 26px rgba(0,0,0,0.18),
-                0 0 0 1px rgba(255,255,255,0.5);
-            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-        }
-
-        article:hover {
-            transform: translateY(-6px);
-            box-shadow:
-                0 16px 32px rgba(0,0,0,0.26),
-                0 0 0 1px rgba(255,255,255,0.6);
-            border-color: #f3d680;
-        }
-
-        .images-wrapper {
-            background: #f2ebd8;
-            padding: 10px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .images-wrapper img {
-            width: calc(50% - 4px);
-            height: 170px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-        .content {
-            padding: 16px 18px 18px;
-        }
-
-        .location-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: linear-gradient(90deg, var(--deep-red), var(--gold));
-            color: white;
-            padding: 4px 12px;
-            border-radius: 999px;
-            font-size: 0.8rem;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-        }
-
-        .location-tag-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 999px;
-            background-color: rgba(255,255,255,0.9);
-        }
-
-        h2 {
-            color: var(--deep-green);
-            margin: 10px 0 6px;
-            font-size: 1.35rem;
-        }
-
-        .content p {
-            font-size: 0.92rem;
-            color: #374151;
-        }
-
-        .content p + p {
-            margin-top: 4px;
-        }
-
-        .content a {
-            color: var(--deep-green);
-            text-decoration: none;
-            font-weight: 500;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .content a:hover {
-            text-decoration: underline;
-        }
-
-        /* ---------- FOOTER ---------- */
-        footer {
-            text-align: center;
-            padding: 18px 12px 26px;
-            color: #e5e7eb;
-            font-size: 0.9rem;
-        }
-
-        footer-inner {
-            display: inline-block;
-        }
-
-        footer p {
-            margin-top: 4px;
-        }
-
-        footer {
-            background: linear-gradient(90deg, #02251a, #011811);
-            border-top: 1px solid rgba(0,0,0,0.4);
-            box-shadow: 0 -4px 16px rgba(0,0,0,0.4);
-        }
-
-        /* -------------------------------------------------
-           FLOATING + ADD BUTTON
-        ---------------------------------------------------*/
-        .add-button {
-            position: fixed;
-            bottom: 22px;
-            right: 22px;
-            width: 56px;
-            height: 56px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: radial-gradient(circle at 20% 0, #ffe8a3 0%, var(--gold) 40%, var(--deep-red) 100%);
-            border-radius: 50%;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-            box-shadow: 0 10px 26px rgba(0,0,0,0.6);
-            transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
-            z-index: 1000;
-        }
-
-        .add-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 14px 32px rgba(0,0,0,0.7);
-            filter: brightness(1.05);
-        }
-
-        /* -------------------------------------------------
-           MODAL BACKDROP
-        ---------------------------------------------------*/
-        .modal-bg {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.5);
-            backdrop-filter: blur(6px);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            z-index: 2000;
-        }
-
-        .modal-bg.active {
-            display: flex;
-        }
-
-        /* -------------------------------------------------
-           MODAL CARD
-        ---------------------------------------------------*/
-        .modal-card {
-            width: 100%;
-            max-width: 480px;
-            background: #faf7ee;
-            border-radius: 16px;
-            padding: 22px 24px 22px;
-            border: 1px solid rgba(229, 199, 107, 0.85);
-            box-shadow: 0 16px 38px rgba(0,0,0,0.55);
-            position: relative;
-            animation: fadeInModal 0.25s ease;
-        }
-
-        @keyframes fadeInModal {
-            from { transform: translateY(15px); opacity: 0; }
-            to   { transform: translateY(0); opacity: 1; }
-        }
-
-        .modal-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 12px;
-            color: var(--deep-green);
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            cursor: pointer;
-            background: var(--deep-red);
-            color: white;
-            border: none;
-            font-size: 1rem;
-            border-radius: 50%;
-            width: 28px;
-            height: 28px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .form-group {
-            margin-bottom: 14px;
-        }
-
-        label {
-            font-weight: 600;
-            display: block;
-            margin-bottom: 4px;
-            font-size: 0.9rem;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid #c4b58c;
-            outline: none;
-            font-size: 0.92rem;
-            font-family: inherit;
-            background-color: #fdfaf4;
-        }
-
-        input:focus, textarea:focus {
-            border-color: var(--deep-green);
-            box-shadow: 0 0 0 1px rgba(0,88,65,0.25);
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 96px;
-        }
-
-        .btn-submit {
-            background: linear-gradient(90deg, var(--deep-red), var(--gold));
-            color: white;
-            padding: 10px 18px;
-            border-radius: 999px;
-            border: none;
-            width: 100%;
-            font-size: 1rem;
-            cursor: pointer;
-            margin-top: 4px;
-            box-shadow: 0 8px 18px rgba(0,0,0,0.5);
-            transition: 0.2s ease;
-        }
-
-        .btn-submit:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 10px 22px rgba(0,0,0,0.6);
-        }
-
-        /* -------------------------------------------------
-           SPLASH / LOADING LOGO SCREEN – TONE MATCHED
-        ---------------------------------------------------*/
-        #splash-screen {
-            position: fixed;
-            inset: 0;
-            background: radial-gradient(circle at top, #fdf5d3 0%, #8c1b1b 40%, #06251a 90%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 5000;
-            opacity: 0;
-            animation: splashFadeIn 0.8s ease forwards;
-        }
-
-        #splash-screen.hide {
-            animation: splashFadeOut 0.8s ease forwards;
-        }
-
-        .splash-panel {
-            background: rgba(12, 32, 27, 0.92);
-            border-radius: 18px;
-            padding: 22px 26px 20px;
-            max-width: 420px;
-            width: 90%;
-            border: 1px solid rgba(250, 250, 249, 0.18);
-            box-shadow:
-              0 20px 60px rgba(0, 0, 0, 0.9),
-              0 0 0 1px rgba(29, 35, 32, 0.9);
-        }
-
-        .splash-header {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 10px;
-        }
-
-        .splash-logo-frame {
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-            border: 1px solid #f4d98a;
-            background: radial-gradient(circle at 30% 20%, #fff8d1 0%, #b37a00 50%, #4d1111 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.85);
-            overflow: hidden;
-        }
-
-        .splash-logo-frame img {
-            width: 70%;
-            height: 70%;
-            object-fit: contain;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.7));
-        }
-
-        .splash-text-block {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .splash-kku {
-            font-size: 0.8rem;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: rgba(229, 231, 235, 0.72);
-        }
-
-        .splash-title {
-            font-size: 1.15rem;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            color: #fefcf5;
-        }
-
-        .splash-subtitle {
-            margin-top: 8px;
-            font-size: 0.9rem;
-            color: rgba(241, 245, 249, 0.86);
-        }
-
-        .splash-accent-line {
-            height: 1px;
-            margin-top: 12px;
-            margin-bottom: 10px;
-            background: linear-gradient(90deg, transparent, #f4d98a, transparent);
-            opacity: 0.9;
-        }
-
-        .splash-footer-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 8px;
-            margin-top: 4px;
-        }
-
-        .splash-label {
-            font-size: 0.78rem;
-            color: rgba(209, 213, 219, 0.7);
-        }
-
-        .splash-loader {
-            position: relative;
-            width: 110px;
-            height: 2px;
-            border-radius: 999px;
-            background: rgba(31, 41, 55, 0.95);
-            overflow: hidden;
-        }
-
-        .splash-loader::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(90deg, transparent, #facc15, #f97316, transparent);
-            transform: translateX(-100%);
-            animation: loaderSlide 1.4s ease-in-out infinite;
-        }
-
-        @keyframes loaderSlide {
-            0%   { transform: translateX(-100%); }
-            50%  { transform: translateX(0); }
-            100% { transform: translateX(100%); }
-        }
-
-        @keyframes splashFadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes splashFadeOut {
-            from { opacity: 1; transform: translateY(0); }
-            to   { opacity: 0; transform: translateY(-10px); }
-        }
-
-        @media (max-width: 640px) {
-            header {
-                padding: 28px 16px 22px;
-            }
-
-            .student-info {
-                flex-direction: column;
-                border-radius: 12px;
-            }
-
-            main {
-                padding: 20px 16px 32px;
-            }
-
-            .main-title-row {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .splash-panel {
-                padding: 18px 18px 16px;
-            }
-
-            .splash-header {
-                gap: 12px;
-            }
-
-            .splash-logo-frame {
-                width: 56px;
-                height: 56px;
-            }
-        }
+        
     </style>
 </head>
 <body>
 
-    <!-- SPLASH / LOADING LOGO -->
-    <div id="splash-screen" aria-hidden="true">
-        <div class="splash-panel">
-            <div class="splash-header">
-                <div class="splash-logo-frame">
-                    <!-- ปรับ path รูปโลโก้ตามไฟล์ของคุณ -->
-                    <img src="images/KKULogoLab2.png" alt="KKU Logo">
-                </div>
-                <div class="splash-text-block">
-                    <span class="splash-kku">Khon Kaen University</span>
-                    <div class="splash-title">KKU Campus Guide</div>
-                </div>
-            </div>
-
-            <div class="splash-accent-line"></div>
-
-            <p class="splash-subtitle">
-                แนะนำสถานที่สำคัญภายในมหาวิทยาลัยขอนแก่น
-                
-            </p>
-
-            <div class="splash-footer-row">
-                <span class="splash-label">Loading campus experience</span>
-                <div class="splash-loader"></div>
-            </div>
-        </div>
+<header>
+    <canvas id="logoCanvas" width="160" height="160"></canvas>
+    <div class="title-text">
+        <h2><strong>KKU Campus Guide</strong></h2>
+        <p>แนะนำสถานที่ภายในมหาวิทยาลัยขอนแก่น</p>
+        <p><b>รหัสนักศึกษา: 663380504-5 — ชื่อ–สกุล: ณัฐรภา ศรีวิชา</b></p>
     </div>
+</header>
 
-    <!-- HEADER -->
-    <header>
-        <div class="page-logo">
-    <img src="images/KKULogoLab2.png" alt="KKU Logo">
-    <div class="shine"></div>
-        </div>
 
-        <h1>KKU Campus Guide</h1>
-        <p class="subhead">แนะนำสถานที่สำคัญมหาวิทยาลัยขอนแก่น</p>
-        <div class="student-info">
-            <span><strong>รหัสประจำตัวนักศึกษา:</strong> 663380213-6</span>
-            <span><strong>ชื่อ-สกุล:</strong> ธิติวุฒิ ศรีอมรรัตน์</span>
-        </div>
-    </header>
 
-    <div class="page-shell">
-        <main>
-            <div class="main-title-row">
-                <div class="main-title-row-left">
-                    <div class="main-title">สถานที่ภายในมหาวิทยาลัย</div>
-                    <div class="main-subtitle">
-                        รวมจุดสำคัญสำหรับการรับประทานอาหาร การเรียนรู้ การออกกำลังกาย และการพักผ่อน
-                    </div>
-                </div>
+<main class="container mt-4">
+
+    <h3 class="mb-4 ">สถานที่แนะนำในมหาวิทยาลัยขอนแก่น</h3>
+    <!---->
+    <!-- ================== PLACE 1 ================== -->
+    <section class="place">
+        <h4>1. หอสมุดกลาง มหาวิทยาลัยขอนแก่น</h4>
+        <p>
+            หอสมุดกลาง มหาวิทยาลัยขอนแก่น เป็นศูนย์รวมทรัพยากรสารสนเทศและแหล่งเรียนรู้ที่สำคัญของมหาวิทยาลัย เพื่อสนับสนุนการเรียนการสอน การค้นคว้าวิจัย และการบริการทางวิชาการ โดยมีภารกิจหลักในการให้บริการทรัพยากรห้องสมุด ทั้งในรูปแบบสิ่งพิมพ์และดิจิทัล และจัดให้มีพื้นที่สำหรับการเรียนรู้ ศึกษาค้นคว้า และทำกิจกรรมต่าง ๆ นอกจากนี้ หอสมุดฯ ยังมีค่านิยมหลักคือ SMART LIFE เพื่อส่งเสริมการเรียนรู้ตลอดชีวิต การใช้เทคโนโลยี และการบริการที่เป็นเลิศแก่ผู้ใช้บริการทุกกลุ่ม 
+        </p>
+        <div class="row">
+            <div class="col-md-6">
+                <img src="img/library1.png" alt="KKU Library">
             </div>
-
-            <section class="location-container">
-                <!-- Location Cards -->
-                <article>
-                    <div class="images-wrapper">
-                        <img src="images/ComplexKKU1.jpg" alt="KKU Complex 1">
-                        <img src="images/ComplexKKU2.jpg" alt="KKU Complex 2">
-                    </div>
-                    <div class="content">
-                        <h2>🏛️ KKU Complex</h2>
-                        <span class="location-tag">
-                            <span class="location-tag-dot"></span>
-                            โรงอาหาร
-                        </span>
-                        <p>คอมเพล็กซ์ มหาวิทยาลัยขอนแก่น เป็นศูนย์รวมการใช้ชีวิตของนักศึกษาและบุคลากร ทั้งร้านอาหาร ร้านกาแฟ ร้านสะดวกซื้อ และบริการต่าง ๆ ภายในจุดเดียว</p>
-                        <p><a href="https://maps.app.goo.gl/BUKJqzUf1wAx4dDv6" target="_blank">ดูแผนที่ใน Google Maps</a></p>
-                    </div>
-                </article>
-
-                <article>
-                    <div class="images-wrapper">
-                        <img src="images/LibraryKKU1.jpg" alt="Library 1">
-                        <img src="images/LibraryKKU2.jpg" alt="Library 2">
-                    </div>
-                    <div class="content">
-                        <h2>📚 ห้องสมุดมหาวิทยาลัย</h2>
-                        <span class="location-tag">
-                            <span class="location-tag-dot"></span>
-                            แหล่งเรียนรู้
-                        </span>
-                        <p>แหล่งรวมหนังสือ วารสาร งานวิจัย และสื่อการเรียนรู้ดิจิทัล พร้อมพื้นที่อ่านหนังสือแบบเดี่ยวและแบบกลุ่ม รวมถึงห้องประชุมย่อยสำหรับทำงานร่วมกัน</p>
-                        <p><a href="https://maps.app.goo.gl/h1isXaR41eyd7pHx7" target="_blank">ดูแผนที่ใน Google Maps</a></p>
-                    </div>
-                </article>
-
-                <article>
-                    <div class="images-wrapper">
-                        <img src="images/SportComplexKKU1.jpg" alt="Sport Complex 1">
-                        <img src="images/SportComplexKKU2.jpg" alt="Sport Complex 2">
-                    </div>
-                    <div class="content">
-                        <h2>⚽ สนามกีฬามหาวิทยาลัย</h2>
-                        <span class="location-tag">
-                            <span class="location-tag-dot"></span>
-                            สิ่งอำนวยความสะดวก
-                        </span>
-                        <p>ศูนย์รวมกีฬาทั้งในร่มและกลางแจ้ง ประกอบด้วยสนามฟุตบอล สนามบาสเกตบอล ลู่วิ่ง เทนนิส และอุปกรณ์ออกกำลังกาย เหมาะสำหรับการออกกำลังกายและจัดกิจกรรมกีฬา</p>
-                        <p><a href="https://maps.app.goo.gl/tUYCu4UaU2nzDVcS9" target="_blank">ดูแผนที่ใน Google Maps</a></p>
-                    </div>
-                </article>
-
-                <article>
-                    <div class="images-wrapper">
-                        <img src="images/SeeTan1.jpg" alt="SeeTan 1">
-                        <img src="images/SeeTan2.jpg" alt="SeeTan 2">
-                    </div>
-                    <div class="content">
-                        <h2>🍽️ บึงศรีฐาน</h2>
-                        <span class="location-tag">
-                            <span class="location-tag-dot"></span>
-                            สถานที่พักผ่อน
-                        </span>
-                        <p>จุดพักผ่อนยอดนิยมบรรยากาศริมบึง เหมาะสำหรับวิ่งเล่น เดินออกกำลังกาย รับประทานอาหาร และชมวิวพระอาทิตย์ตก พร้อมมุมถ่ายรูปสวย ๆ รอบบึง</p>
-                        <p><a href="https://maps.app.goo.gl/JRPhB7TKroyZwwd8A" target="_blank">ดูแผนที่ใน Google Maps</a></p>
-                    </div>
-                </article>
-            </section>
-        </main>
-    </div>
-
-    <footer>
-        <p>&copy; 2024 KKU Campus Guide - มหาวิทยาลัยขอนแก่น</p>
-    </footer>
-
-    <!-- Floating add button -->
-    <div class="add-button" id="openModal">+</div>
-
-    <!-- Modal for new place form -->
-    <div class="modal-bg" id="modalBG">
-        <div class="modal-card">
-            <button class="close-btn" id="closeModal">×</button>
-            <h3>เพิ่มสถานที่ใหม่</h3>
-
-            <form action="https://api.web3forms.com/submit" method="POST">
-                <input type="hidden" name="access_key" value="cdfc66ed-4301-4b99-a053-d04831979bb9">
-
-                <div class="form-group">
-                    <label>ชื่อผู้เสนอ</label>
-                    <input type="text" name="name" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Email สำหรับติดต่อกลับ</label>
-                    <input type="email" name="email" required>
-                </div>
-
-                <div class="form-group">
-                    <label>ชื่อสถานที่</label>
-                    <input type="text" name="place_name" required>
-                </div>
-
-                <div class="form-group">
-                    <label>รายละเอียด</label>
-                    <textarea name="place_detail" required></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>URL รูปภาพ</label>
-                    <input type="url" name="image_url" required>
-                </div>
-
-                <button class="btn-submit" type="submit">ส่งข้อมูล</button>
-            </form>
+            <div class="col-md-6">
+                <img src="img/library2.png" alt="KKU Library">
+            </div>
         </div>
-    </div>
+    </section>
 
-    <script>
-        // Modal logic
-        const modalBG = document.getElementById("modalBG");
-        const openBtn = document.getElementById("openModal");
-        const closeBtn = document.getElementById("closeModal");
+    <!-- ================== PLACE 2 ================== -->
+    <section class="place">
+        <h4>2. ศาลเจ้าพ่อมอดินแดง</h4>
+        <p>
+            ศาลเจ้าพ่อมอดินแดงเป็นสิ่งศักดิ์สิทธิ์ประจำมหาวิทยาลัยขอนแก่น เป็นที่เคารพศรัทธาของนักศึกษาและประชาชนทั่วไป เชื่อว่าขอพรให้สำเร็จดังปรารถนา โดยเฉพาะการเดินทางปลอดภัย การเรียน และการงาน ตำนานเดิมมีที่มาจาก "นายเหลา สีแดง" ที่เสียชีวิตในบริเวณนั้นและถูกฝังทั้งยืน ปัจจุบันศาลได้ถูกพัฒนาเป็น "ศาลาธรรมสถาน เจ้าพ่อมอดินแดง" เพื่อเป็นที่เคารพสักการะและปฏิบัติธรรม 
+        </p>
+        <div class="row">
+            <div class="col-md-6">
+                <img src="img/เจ้าพ่อมอ.png" alt="ศาลเจ้าพ่อมอดินแดง">
+            </div>
+            <div class="col-md-6">
+                <img src="img/ศาลเจ้าพ่อมอ.png" alt="ศาลเจ้าพ่อมอดินแดง">
+            </div>
+        </div>
+    </section>
 
-        openBtn.onclick = () => {
-            modalBG.classList.add("active");
-        };
+    <!-- ================== PLACE 3 ================== -->
+    <section class="place">
+        <h4>3. ตลาดมอดินแดง</h4>
+        <p>
+            ตลาดมอดินแดง เป็นโครงการบริการสวัสดิการอาหาร – สินค้า สำหรับนักศึกษาและบุคลากรภายในมหาวิทยาลัยขอนแก่น เปิดให้บริการทุกวัน ตั้งแต่เวลาประมาณ 16.00 เป็นต้นไป   ตลาดตั้งอยู่หลังศูนย์อาหารและบริการ 1 (คอมเพล็กซ์)
+        </p>
+        <div class="row">
+            <div class="col-md-6">
+                <img src="img/taladmor.png" alt="ตลาดมอดินแดง">
+            </div>
+            <div class="col-md-6">
+                <img src="img/taladmor2.png" alt="ตลาดมอดินแดง">
+            </div>
+        </div>
+    </section>
 
-        closeBtn.onclick = () => {
-            modalBG.classList.remove("active");
-        };
+    <!-- ================== PLACE 4 ================== -->
+    <section class="place">
+        <h4>4. บึงสีฐาน</h4>
+        <p>
+            บึงสีฐานเป็นบึงสำคัญภายในมหาวิทยาลัยขอนแก่น เป็นสถานที่พักผ่อนหย่อนใจ ออกกำลังกาย และทำกิจกรรมต่างๆ ทั้งสำหรับนักศึกษา บุคลากร และประชาชนทั่วไป มีบรรยากาศร่มรื่น สวยงาม โดยเฉพาะช่วงเย็นที่พระอาทิตย์ตก และเป็นที่จัดกิจกรรมใหญ่ๆ ของมหาวิทยาลัย เช่น เทศกาลสีฐานเฟสติวัล 
+        </p>
+        <div class="row">
+            <div class="col-md-6">
+                <img src="img/sithan2.png" alt="บึงสีฐาน">
+            </div>
+            <div class="col-md-6">
+                <img src="img/sithan.png" alt="บึงสีฐาน">
+            </div>
+        </div>
+    </section>
 
-        window.onclick = (e) => {
-            if (e.target === modalBG) modalBG.classList.remove("active");
-        };
+    <!-- ================== PLACE 5 ================== -->
+    <section class="place">
+        <h4>5. คอมเพล็กซ์</h4>
+        <p>
+            คอมเพล็กซ์ มข. (KKU Complex) คือศูนย์อาหารและบริการที่ใหญ่ที่สุดของมหาวิทยาลัยขอนแก่น ซึ่งมีการปรับปรุงครั้งใหญ่ให้เป็นศูนย์กลางไลฟ์สไตล์สำหรับนักศึกษา บุคลากร และบุคคลภายนอก โดยจะมีการเพิ่มพื้นที่ใช้สอย เช่น พื้นที่ศูนย์อาหาร, ร้านค้า, Co-working space, และมี Skywalk เชื่อมต่อไปยังอาคารและพื้นที่สำคัญต่างๆ ในมหาวิทยาลัย 
+        </p>
+        <div class="row">
+            <div class="col-md-6">
+                <img src="img/complex.png" alt="complex">
+            </div>
+            <div class="col-md-6">
+                <img src="img/complex2.png" alt="complex">
+            </div>
+        </div>
+    </section>
+</main>
 
-        // Splash / loading logo logic
-        const splash = document.getElementById("splash-screen");
+<section class="place-form container mt-5">
+    <h3>แนะนำสถานที่ใหม่</h3>
+    <form id="recommendForm" method="POST" action="https://api.web3forms.com/submit">
+        <!-- Access Key ของคุณจาก Web3Forms -->
+        <input type="hidden" name="access_key" value="03b1db60-3bbf-477b-b552-ee9b68443a65" />
 
-        window.addEventListener("load", () => {
-            setTimeout(() => {
-                splash.classList.add("hide");
-                setTimeout(() => {
-                    splash.style.display = "none";
-                }, 800);
-            }, 3000);
-        });
-    </script>
+        <!-- ชื่อผู้ส่ง (optional) -->
+        <input type="hidden" name="redirect" value="https://yourwebsite.com/index.html" />
+
+        <div class="mb-3">
+            <label for="placeName" class="form-label">ชื่อสถานที่</label>
+            <input type="text" class="form-control" id="placeName" name="placeName" placeholder="กรอกชื่อสถานที่" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-label">รายละเอียด</label>
+            <textarea class="form-control" id="description" name="description" rows="4" placeholder="กรอกรายละเอียดสถานที่" required></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="imageUrl" class="form-label">URL ของภาพ</label>
+            <input type="url" class="form-control" id="imageUrl" name="imageUrl" placeholder="https://example.com/image.jpg" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">ส่งข้อมูล</button>
+    </form>
+</section>
+
+
+<footer class="text-center">
+    © 2025 Mobile Web Application Development — College of Computing, Khon Kaen University
+</footer>
+
+<script>
+const canvas = document.getElementById("logoCanvas");
+const ctx = canvas.getContext("2d");
+
+let angle = 0;
+const brick = "#B5523A";
+const brickDark = "#8A3E2C";
+
+function drawLogo() {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    const cx = canvas.width/2;
+    const cy = canvas.height/2;
+
+    // วาดโครงสร้างตราพระธาตุ (เรียบง่ายเป็นรูปหลายเหลี่ยม)
+    ctx.beginPath();
+    ctx.moveTo(cx, cy - 45); // ยอด
+    ctx.lineTo(cx + 25, cy + 30);
+    ctx.lineTo(cx - 25, cy + 30);
+    ctx.closePath();
+    ctx.fillStyle = brick;
+    ctx.fill();
+    ctx.strokeStyle = brickDark;
+    ctx.lineWidth = 3;
+    ctx.stroke();
+
+    // วงกลมหมุนรอบตรา
+    const orbitRadius = 50;
+    for (let i = 0; i < 6; i++) {
+        let rad = (angle + i * 60) * Math.PI/180;
+        let x = cx + orbitRadius * Math.cos(rad);
+        let y = cy + orbitRadius * Math.sin(rad);
+        ctx.beginPath();
+        ctx.arc(x,y,5,0,Math.PI*2);
+        ctx.fillStyle = brickDark;
+        ctx.fill();
+    }
+
+    // ข้อความภายในตรา
+    ctx.fillStyle = "white";
+    ctx.font = "bold 14px Prompt";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText("KKU", cx, cy - 5);
+    ctx.font = "10px Prompt";
+    ctx.fillText("Campus Guide", cx, cy + 12);
+
+    angle += 1.5;
+    requestAnimationFrame(drawLogo);
+}
+
+drawLogo();
+
+document.getElementById('recommendForm').addEventListener('submit', function(event) {
+    event.preventDefault();  // ป้องกันการ submit แบบปกติ
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+        method: form.method,
+        body: formData,
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('ส่งข้อมูลเรียบร้อย ขอบคุณสำหรับการแนะนำ!');
+            form.reset();
+        } else {
+            alert('เกิดข้อผิดพลาด: ' + (data.message || 'โปรดลองใหม่อีกครั้ง'));
+        }
+    })
+    .catch(() => alert('ไม่สามารถเชื่อมต่อกับเซิร์ฟเวอร์ได้'));
+});
+
+</script>
+
 
 </body>
 </html>
