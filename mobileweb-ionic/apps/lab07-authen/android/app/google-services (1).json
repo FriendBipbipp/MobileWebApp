@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "884593441112",
+    "project_id": "lab06-expense-43990",
+    "storage_bucket": "lab06-expense-43990.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884593441112:android:be80a8ec3320e2a05f4d2d",
+        "android_client_info": {
+          "package_name": "cpkku.fnatrapa.lab07"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADRhcv7icLvje9_QEkt9Iinov2NJQ1cCg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
